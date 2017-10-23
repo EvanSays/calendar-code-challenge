@@ -1,0 +1,29 @@
+.header-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: left;
+}
+
+.month-wrapper {
+  font-size: 30px;
+}
+
+.month-wrapper span {
+  margin: 10px;
+}
+
+.year {
+  font-weight: 300;
+}
+
+.week-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.week-wrapper span {
+  width: 14.28%;
+  text-align: end;
+  margin: 10px;
+}

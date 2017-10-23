@@ -1,0 +1,22 @@
+.days-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.stripe-left {
+  background: #F5F2EF;
+  height: 500px;
+  width: 14.285%;
+  position: absolute;
+  left: 2px;
+  z-index: -1;
+}
+.stripe-right {
+  background: #F5F2EF;
+  height: 400px;
+  width: 14.285%;
+  position: absolute;
+  right: 2px;
+  z-index: -1;
+}
