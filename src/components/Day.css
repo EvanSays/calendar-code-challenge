@@ -6,10 +6,6 @@
   margin-top: -1px;
 }
 
-.day:hover {
-  cursor: pointer;
-}
-
 .day-date-wrapper {
   width: 100%;
   text-align: end;
