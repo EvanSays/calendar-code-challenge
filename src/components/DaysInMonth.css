@@ -5,18 +5,19 @@
 }
 
 .stripe-left {
-  background: #F5F2EF;
-  height: 500px;
+  background: #F5F5F5;
+  height: 900px;
   width: 14.285%;
   position: absolute;
-  left: 2px;
   z-index: -1;
+  height: 892px;
+  left: -1px;
 }
 .stripe-right {
-  background: #F5F2EF;
-  height: 400px;
+  background: #F5F5F5;
+  height: 792px;
   width: 14.285%;
   position: absolute;
-  right: 2px;
+  right: 7px;
   z-index: -1;
 }

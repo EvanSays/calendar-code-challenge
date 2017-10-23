@@ -20,9 +20,22 @@ class DaysInMonth extends Component {
 
     this.setState({
       enumeratedDates: this.datesBetween(october, november),
-      events: eventArray,
     })
    
+    let userDates = eventArray.map(event => {
+      let datesNamesArray = [];
+      let dateBetweenArray = this.datesBetween(moment(new Date(event.start_date)), moment(new Date(event.end_date)));
+      dateBetweenArray.forEach(date => {
+        datesNamesArray.push({ name: event.event_name, date: date})
+      })
+      return datesNamesArray
+    })
+
+    let dates = [].concat.apply([], userDates);
+
+    this.setState({
+      events: dates,
+    })
   }
 
   datesBetween(startDate, endDate) {
@@ -30,7 +43,7 @@ class DaysInMonth extends Component {
       while (now.isBefore(endDate) || now.isSame(endDate)) {
         dates.push(now.clone());
         now.add(1, 'd');
-      }
+      }   
     return dates;
   }
 
@@ -38,18 +51,9 @@ class DaysInMonth extends Component {
     const { enumeratedDates, events } = this.state;
     let day;
     if (enumeratedDates) {
-      day = enumeratedDates.map(date => {
-        for (let i = 0; i < events.length; i++) {
-          // console.log('eventArray[i]', events[i]);
-          // console.log('date.format', date.format('MMMM Do YYYY') );
-          // console.log('events[i].startDate', events[i].start_date);
-          
-          if (date.format('MMMM Do YYYY') === events[i].start_date) {
-            console.log(date.format('MMMM Do YYYY'));
-            
-          }
-        }
-        return <Day date={date}/>
+      day = enumeratedDates.map((date, i) => {
+      
+        return <Day key={i.toString()} date={date} events={events}/>
       })
     }
     
